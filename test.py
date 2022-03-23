@@ -12,6 +12,6 @@ driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(),chrome
 
 driver.get("https://zh-tw.facebook.com/")
 
-driver.find_element_by_id("email").send_keys("123")
+print(driver.find_element_by_id("email"))
 
-driver.find_element_by_id("pass").send_keys("123")
+print(driver.find_element_by_id("pass"))
