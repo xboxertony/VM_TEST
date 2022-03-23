@@ -2,6 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
+import time
+from config import FB_account,FB_pwd
 
 # s=Service(ChromeDriverManager().install())
 # driver = webdriver.Chrome(service=s)
@@ -18,11 +20,19 @@ opts.add_argument('--disable-gpu')
 
 driver = webdriver.Chrome(chrome_options=opts)
 
-print("3")
 driver.get("https://zh-tw.facebook.com/")
 
-print(driver.find_element_by_id("email"))
+driver.find_element_by_id("email").send_keys(FB_account)
 
-print(driver.find_element_by_id("pass"))
+driver.find_element_by_id("pass").send_keys(FB_pwd)
 
-print("4")
+enter = driver.find_element_by_css_selector("[data-testid='royal_login_button']")
+enter.click()
+time.sleep(3)
+
+
+driver.get(f"https://www.facebook.com/loserZUN")
+
+tt = driver.find_elements_by_css_selector(f"[aria-posinset='1']")
+
+print(tt.text)
