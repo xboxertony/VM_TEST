@@ -9,6 +9,8 @@ opts.add_argument('--headless')  #無頭chrome
 opts.add_argument('--disable-gpu')
 print("2")
 
+print(ChromeDriverManager().install())
+
 driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(),chrome_options=opts)
 
 print("3")
