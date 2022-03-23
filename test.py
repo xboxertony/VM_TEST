@@ -9,9 +9,9 @@ opts.add_argument('--headless')  #無頭chrome
 opts.add_argument('--disable-gpu')
 print("2")
 
-print(ChromeDriverManager().install())
+# print(ChromeDriverManager().install())
 
-driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(),chrome_options=opts)
+driver = webdriver.Chrome(executable_path="/home/tonytonytony111136/.wdm/drivers/chromedriver/linux64/99.0.4844.51/chromedriver",chrome_options=opts)
 
 print("3")
 driver.get("https://zh-tw.facebook.com/")
