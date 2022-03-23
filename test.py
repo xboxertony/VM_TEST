@@ -1,6 +1,10 @@
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
 
-driver = webdriver.Chrome(executable_path='./chromedriver.exe')
+options = Options()
+options.set_headless(headless=True)
+
+driver = webdriver.Chrome(executable_path='./chromedriver')
 
 driver.get("https://zh-tw.facebook.com/")
 
