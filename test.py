@@ -35,4 +35,5 @@ driver.get(f"https://www.facebook.com/loserZUN")
 
 tt = driver.find_elements_by_css_selector(f"[aria-posinset='1']")
 
-print(tt.text)
+for i in tt:
+    print(i.text)
