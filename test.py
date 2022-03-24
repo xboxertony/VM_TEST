@@ -5,6 +5,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 from config import FB_account,FB_pwd
 
+# driver = webdriver.Chrome(executable_path='./chromedriver.exe')
+
 # s=Service(ChromeDriverManager().install())
 # driver = webdriver.Chrome(service=s)
 # driver.maximize_window()
@@ -20,20 +22,22 @@ opts.add_argument('--disable-gpu')
 
 driver = webdriver.Chrome(chrome_options=opts)
 
-driver.get("https://zh-tw.facebook.com/")
+driver.get("https://www.instagram.com/")
 
-driver.find_element_by_id("email").send_keys(FB_account)
+time.sleep(5)
 
-driver.find_element_by_id("pass").send_keys(FB_pwd)
+driver.find_element_by_css_selector("[name='username']").send_keys(FB_account)
 
-enter = driver.find_element_by_css_selector("[data-testid='royal_login_button']")
+driver.find_element_by_css_selector("[name='password']").send_keys(FB_pwd)
+
+enter = driver.find_element_by_css_selector("[type='submit']")
 enter.click()
 time.sleep(3)
 
 
-driver.get(f"https://www.facebook.com/loserZUN")
+# driver.get(f"https://www.facebook.com/loserZUN")
 
-tt = driver.find_elements_by_css_selector(f"[aria-posinset='1']")
+# tt = driver.find_elements_by_css_selector(f"[aria-posinset='1']")
 
-for i in tt:
-    print(i.text)
+# for i in tt:
+#     print(i.text)
