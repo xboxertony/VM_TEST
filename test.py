@@ -34,6 +34,8 @@ enter = driver.find_element_by_css_selector("[type='submit']")
 enter.click()
 time.sleep(3)
 
+print("ok")
+
 
 # driver.get(f"https://www.facebook.com/loserZUN")
 
