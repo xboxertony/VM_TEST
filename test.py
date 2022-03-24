@@ -32,9 +32,15 @@ driver.find_element_by_css_selector("[name='password']").send_keys(FB_pwd)
 
 enter = driver.find_element_by_css_selector("[type='submit']")
 enter.click()
-time.sleep(3)
+time.sleep(5)
 
 print("ok")
+
+driver.get("https://www.instagram.com/yga0721/")
+
+time.sleep(10)
+
+print(driver.page_source)
 
 
 # driver.get(f"https://www.facebook.com/loserZUN")
