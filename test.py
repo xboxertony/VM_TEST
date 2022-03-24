@@ -40,7 +40,7 @@ driver.get("https://www.instagram.com/yga0721/")
 
 time.sleep(10)
 
-a = driver.find_element_by_class_name("XBGH5")
+a = driver.find_element_by_class_name("g47SY ")
 
 print(a.text)
 
