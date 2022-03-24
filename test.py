@@ -40,7 +40,9 @@ driver.get("https://www.instagram.com/yga0721/")
 
 time.sleep(10)
 
-print(driver.page_source)
+a = driver.find_element_by_class_name("XBGH5")
+
+print(a.text)
 
 
 # driver.get(f"https://www.facebook.com/loserZUN")
